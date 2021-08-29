@@ -2,23 +2,33 @@ package com.company.vehicles;
 
 public abstract class Engine {
 
-    protected int numberOfCylinders;
-    protected boolean isRunning;
 
-    public Engine(int numberOfCylinders, boolean isRunning) {
-        this.numberOfCylinders = numberOfCylinders;
-        this.isRunning = isRunning;
+    protected boolean isRunning;
+    protected int horsePower;
+    protected int maxSpeed;
+
+    public Engine( boolean isRunning, int horsePower, int maxSpeed) {
+        this.isRunning = false;
+        this.horsePower = horsePower;
+        this.maxSpeed = maxSpeed;
     }
+
 
     protected void flipSwitch(){
-        boolean flip=isRunning ? true : false;
+        final boolean flip = this.isRunning ? true : false;
 
     }
+
+    public abstract void accelerate();
+    public abstract void coast();
+    public abstract void decelerate();
+
     @Override
     public String toString() {
         return "Engine{" +
-                "numberOfCylinders=" + numberOfCylinders +
-                ", isRunning=" + isRunning +
+                "isRunning=" + isRunning +
+                ", horsePower=" + horsePower +
+                ", maxSpeed=" + maxSpeed +
                 '}';
     }
 }

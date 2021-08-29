@@ -14,8 +14,8 @@ public class Car extends Vehicle {
 
 
 
-    public Car(int numberOfCylinders, boolean isRunning, String model, String brand, String manufacture, int doors, boolean isAutomatic, int maxPassengers) {
-        super(numberOfCylinders, isRunning, model, brand, manufacture, doors, isAutomatic,maxPassengers);
+    public Car(int numberOfCylinders, boolean isRunning, String model, String brand, String manufacture, int doors, int maxPassengers) {
+        super(numberOfCylinders, isRunning, model, brand, manufacture, doors,maxPassengers);
         this.doors=doors;
         this.carPassengers=new ArrayList<>();
 
@@ -40,6 +40,18 @@ public class Car extends Vehicle {
 
 
     @Override
+    public void accelerate() {
+    }
+
+    @Override
+    public void coast() {
+    }
+
+    @Override
+    public void decelerate() {
+    }
+
+    @Override
     public String toString() {
         return "Car{" +
                 "\nnumberOfCylinders=" + numberOfCylinders +
@@ -47,7 +59,6 @@ public class Car extends Vehicle {
                 "\nmodel='" + model + '\'' +
                 "\nbrand='" + brand + '\'' +
                 "\nmanufacture='" + manufacture + '\'' +
-                "\nisAutomatic=" + isAutomatic +
                 "\nmaxPassengers=" + maxPassengers +
                 "\npassengers=" + passengers +
                 "\ndoors=" + doors +

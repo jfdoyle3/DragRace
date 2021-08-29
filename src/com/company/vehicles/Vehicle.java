@@ -8,7 +8,6 @@ public abstract class Vehicle extends Engine {
     protected String model;
     protected String brand;
     protected String manufacture;
-    protected boolean isAutomatic;
     protected int maxPassengers;
     protected List<Passenger> passengers;
 
@@ -18,26 +17,30 @@ public abstract class Vehicle extends Engine {
                    String brand,
                    String manufacture,
                    int doors,
-                   boolean isAutomatic,
                    int maxPassengers) {
         super(numberOfCylinders, isRunning);
         this.model = model;
         this.brand = brand;
         this.manufacture = manufacture;
-        this.isAutomatic = isAutomatic;
-        this.maxPassengers = maxPassengers;
+                this.maxPassengers = maxPassengers;
         this.passengers = new ArrayList<>();
     }
 
-    public void addPassenger(String name) {
-        passengers.add(new Passenger(name));
+    public void addPassenger(String name, int weight) {
+        passengers.add(new Passenger(name, weight));
     }
 
-    public void addPassenger(int numOfPassengers) {
+    // weight avg 137
+    // weight 100 - 200
+    public void generatePassengers(int numOfPassengers) {
+        int upperBound = 220;
+        int lowerBound = 100;
+
         for (int idx = 0; idx < numOfPassengers; idx++) {
             StringBuilder pass = new StringBuilder();
             pass.append("Passenger ").append(idx + 1);
-            passengers.add(new Passenger(pass.toString()));
+            int number = lowerBound + (int)(Math.random() * ((upperBound - lowerBound) + 1));
+            passengers.add(new Passenger(pass.toString(),number));
         }
         System.out.println(passengers.size() + " Passengers have been added to list");
     }
