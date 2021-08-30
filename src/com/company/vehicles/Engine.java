@@ -6,16 +6,17 @@ public abstract class Engine {
     protected boolean isRunning;
     protected int horsePower;
     protected int maxSpeed;
+    protected int mph;
 
-    public Engine( boolean isRunning, int horsePower, int maxSpeed) {
+    public Engine(int horsePower) {
         this.isRunning = false;
         this.horsePower = horsePower;
-        this.maxSpeed = maxSpeed;
+        this.mph=0;
     }
 
 
     protected void flipSwitch(){
-        final boolean flip = this.isRunning ? true : false;
+        this.isRunning=!isRunning;
 
     }
 
@@ -28,7 +29,7 @@ public abstract class Engine {
         return "Engine{" +
                 "isRunning=" + isRunning +
                 ", horsePower=" + horsePower +
-                ", maxSpeed=" + maxSpeed +
+                ", mph="+mph+
                 '}';
     }
 }

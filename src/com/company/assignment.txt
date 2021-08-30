@@ -8,7 +8,7 @@
     decelerate
 
 
-    - accelerate should raise the vehicles speed by (recommended) the engines acceleration rate until the vehicle reaches max speed.
+    - accelerate should raise the vehicles speed by (recommended) the engines' acceleration rate until the vehicle reaches max speed.
     - coast should maintain the vehicles current speed or if implemented apply some sort of reduction due to either
              friction, wind resistance, vehicle weight etc.
     - decelerate should reduce the vehicles speed by the (recommended) vehicles brake rate (unless a tire/breaks class is implemented)
