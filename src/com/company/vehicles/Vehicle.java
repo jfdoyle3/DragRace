@@ -3,18 +3,17 @@ package com.company.vehicles;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Vehicle extends Engine {
+public abstract class Vehicle extends Engine  {
 
     protected String model;
     protected int maxPassengers;
 
-
-    public Vehicle(int horsePower, String model, int maxPassengers) {
-        super(horsePower);
+    public Vehicle(int horsePower, int maxSpeed,String model, int maxPassengers) {
+        super(horsePower,maxSpeed);
         this.model = model;
         this.maxPassengers = maxPassengers;
-
     }
+
 
     public abstract void addPassenger(String name, int weight);
 
@@ -34,10 +33,9 @@ public abstract class Vehicle extends Engine {
 
     @Override
     public String toString() {
-        return "Vehicle{" +
-                "model='" + model + '\'' +
-                super.isRunning +
-                '}';
+        return "Vehicle:" +
+                "\nmodel=" + model;
+
     }
 
 

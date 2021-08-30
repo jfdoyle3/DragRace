@@ -11,13 +11,16 @@ public class Car extends Vehicle {
     private List<Passenger> carPassengers;
     private int weight;
     private int totalWeight;
+    private Engine engine;
 
-    // max speed?
-    public Car(int horsePower, String model, int maxPassengers, int weight) {
-        super(horsePower, model, maxPassengers);
-        this.weight = weight;
-        this.carPassengers = new ArrayList<>();
+
+    public Car(String model, int maxPassengers, Engine engine) {
+        super(model, maxPassengers);
+        this.engine=engine;
+
+
     }
+
 
     public void addPassenger(String name, int weight) {
         carPassengers.add(new Passenger(name, weight));
