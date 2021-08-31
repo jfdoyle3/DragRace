@@ -1,8 +1,5 @@
 package com.company;
 
-import com.company.vehicles.Car;
-import com.company.vehicles.Engine;
-
 import java.util.Scanner;
 
 public class Main {
@@ -11,7 +8,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Scanner input = new Scanner(System.in);
+        DragStrip.pitArea();
+        // Scanner input = new Scanner(System.in);
 //                               hp,name,passenger,weight
 //        Car sportCar = new Car(100,"SportsCar",2, 2300);
 //        Car nascar=new Car(100,"Nascar",1,3400);

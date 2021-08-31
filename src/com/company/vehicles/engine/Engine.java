@@ -1,7 +1,6 @@
-package com.company.vehicles;
+package com.company.vehicles.engine;
 
 public abstract class Engine {
-
 
     protected boolean isRunning;
     protected int horsePower;
@@ -10,17 +9,13 @@ public abstract class Engine {
 
     public Engine(int horsePower, int maxSpeed) {
         this.isRunning = false;
-        this.maxSpeed=maxSpeed;
+        this.maxSpeed = maxSpeed;
         this.horsePower = horsePower;
-        this.mph=0;
+        this.mph = 0;
     }
 
 
-
-    protected void flipSwitch(){
-        this.isRunning=!isRunning;
-    }
-
+    public abstract void flipSwitch();
 
 
     @Override
@@ -28,7 +23,7 @@ public abstract class Engine {
         return "Engine:" +
                 "\nisRunning=" + isRunning +
                 "\nhorsePower=" + horsePower +
-                "\nMax Speed= "+maxSpeed+
-                "\ncurrent speed="+mph;
+                "\nMax Speed= " + maxSpeed +
+                "\ncurrent speed=" + mph;
     }
 }

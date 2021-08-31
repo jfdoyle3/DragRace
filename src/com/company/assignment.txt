@@ -25,3 +25,6 @@
 
             be creative on this I'm giving very little information to see if you can build something from almost no information.
             Ask for help when stuck and take the needed time to plan.
+
+            Car/Vehicle can have no engine in it.
+            you can add an engine later.

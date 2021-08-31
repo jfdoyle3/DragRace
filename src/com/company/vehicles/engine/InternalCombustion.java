@@ -1,10 +1,10 @@
 package com.company.vehicles.engine;
 
-public class Gas extends Engine {
+public class InternalCombustion extends Engine {
 
     private int tankSize;
 
-    public Gas(int horsePower, int maxSpeed, int tankSize) {
+    public InternalCombustion(int horsePower, int maxSpeed, int tankSize) {
         super(horsePower, maxSpeed);
         this.tankSize = tankSize;
     }

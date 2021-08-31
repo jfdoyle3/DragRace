@@ -3,13 +3,12 @@ package com.company.vehicles;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Vehicle extends Engine  {
+public abstract class Vehicle  {
 
     protected String model;
     protected int maxPassengers;
 
     public Vehicle(int horsePower, int maxSpeed,String model, int maxPassengers) {
-        super(horsePower,maxSpeed);
         this.model = model;
         this.maxPassengers = maxPassengers;
     }
@@ -22,14 +21,6 @@ public abstract class Vehicle extends Engine  {
     public abstract void removePassenger(String name);
 
     public abstract void horn();
-
-    public abstract void turnOn();
-
-    public abstract void turnOff();
-
-
-
-
 
     @Override
     public String toString() {

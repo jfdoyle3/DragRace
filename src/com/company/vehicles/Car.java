@@ -1,7 +1,6 @@
 package com.company.vehicles;
 
-import com.company.vehicles.Passenger;
-import com.company.vehicles.Vehicle;
+import com.company.vehicles.engine.Engine;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,14 +12,12 @@ public class Car extends Vehicle {
     private int totalWeight;
     private Engine engine;
 
-
-    public Car(String model, int maxPassengers, Engine engine) {
-        super(model, maxPassengers);
-        this.engine=engine;
-
-
+    public Car(int horsePower, int maxSpeed, String model, int maxPassengers, int weight, Engine engine) {
+        super(horsePower, maxSpeed, model, maxPassengers);
+        this.carPassengers = new ArrayList<>();
+        this.weight = weight;
+        this.engine = engine;
     }
-
 
     public void addPassenger(String name, int weight) {
         carPassengers.add(new Passenger(name, weight));
@@ -74,35 +71,36 @@ public class Car extends Vehicle {
         System.out.println("Beep!");
     }
 
-    @Override
-    public void turnOn() {
-        flipSwitch();
-    }
-
-    @Override
-    public void turnOff() {
-        flipSwitch();
-    }
 
 
-    @Override
-    public void accelerate() {
+//    @Override
+//    public void turnOn() {
+//        flipSwitch();
+//    }
+//
+//    @Override
+//    public void turnOff() {
+//        flipSwitch();
+//    }
 
-    }
 
-    @Override
-    public void coast() {
-    }
-
-    @Override
-    public void decelerate() {
-    }
+//    @Override
+//    public void accelerate() {
+//
+//    }
+//
+//    @Override
+//    public void coast() {
+//    }
+//
+//    @Override
+//    public void decelerate() {
+ //   }
 
     @Override
     public String toString() {
         return "Car:" +
                 "\nmodel='" + model + '\'' +
-                "\nisRunning=" + isRunning +
                 "\nweight="+weight+
                 "\nmaxPassengers=" + maxPassengers +
                 "\ncarPassengers=" + carPassengers +
