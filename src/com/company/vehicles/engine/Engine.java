@@ -21,9 +21,7 @@ public abstract class Engine {
         this.isRunning=!isRunning;
     }
 
-    public abstract void accelerate();
-    public abstract void coast();
-    public abstract void decelerate();
+
 
     @Override
     public String toString() {
