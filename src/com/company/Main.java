@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        DragStrip.pitArea();
+    //    DragStrip.pitArea();
         // Scanner input = new Scanner(System.in);
 //                               hp,name,passenger,weight
 //        Car sportCar = new Car(100,"SportsCar",2, 2300);
@@ -22,6 +22,19 @@ public class Main {
     //    car.generatePassengers(2);
 
     //    System.out.println(car.toString());
+
+         // Timed loop.
+//        StringBuilder move=new StringBuilder();
+//        long start = System.currentTimeMillis();
+//        for(int idx=0; idx<1000; idx++){
+//            System.out.println(idx);
+//        }
+//        long finish = System.currentTimeMillis();
+//        long timeElapsed = finish - start;
+//        System.out.println("\n\n");
+//        System.out.println(timeElapsed);
+
+
 
     }
 }

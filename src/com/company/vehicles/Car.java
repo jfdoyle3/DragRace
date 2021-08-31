@@ -11,12 +11,14 @@ public class Car extends Vehicle {
     private int weight;
     private int totalWeight;
     private Engine engine;
+    private int tankSize;
 
-    public Car(int horsePower, int maxSpeed, String model, int maxPassengers, int weight, Engine engine) {
-        super(horsePower, maxSpeed, model, maxPassengers);
+    public Car(String model, int maxPassengers, int weight, Engine engine, int tankSize) {
+        super(model, maxPassengers);
         this.carPassengers = new ArrayList<>();
         this.weight = weight;
         this.engine = engine;
+        this.tankSize=tankSize;
     }
 
     public void addPassenger(String name, int weight) {
@@ -101,10 +103,12 @@ public class Car extends Vehicle {
     public String toString() {
         return "Car:" +
                 "\nmodel='" + model + '\'' +
-                "\nweight="+weight+
                 "\nmaxPassengers=" + maxPassengers +
                 "\ncarPassengers=" + carPassengers +
-                "\nOccupants & Car weight="+this.getTotalWeight();
+                "\nweight=" + weight +
+                "\ntotalWeight=" + getTotalWeight()+
+                "\ntankSize=" + tankSize+
+                "\nEngine:\n" + engine.toString();
     }
 
 

@@ -8,9 +8,13 @@ public abstract class Vehicle  {
     protected String model;
     protected int maxPassengers;
 
-    public Vehicle(int horsePower, int maxSpeed,String model, int maxPassengers) {
+    public Vehicle(String model, int maxPassengers) {
         this.model = model;
         this.maxPassengers = maxPassengers;
+    }
+
+    public String getModel() {
+        return model;
     }
 
 
@@ -24,9 +28,10 @@ public abstract class Vehicle  {
 
     @Override
     public String toString() {
-        return "Vehicle:" +
-                "\nmodel=" + model;
-
+        return "Vehicle{" +
+                "model='" + model + '\'' +
+                ", maxPassengers=" + maxPassengers +
+                '}';
     }
 
 

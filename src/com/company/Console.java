@@ -20,15 +20,17 @@ public class Console {
         return choice;
     }
 
-    public static int selectEngine() {
-        System.out.println("Select Engine:\n1. Internal Combustion\n2. Electric");
+
+
+    public static int selectEngine(){
+        System.out.println("Select Engine:\nGas\t\tElectric\n1. V8\t3. 1000KV\n2. V12\t4. 1300KV");
         System.out.print("==>");
         int choice = input.nextInt();
         return choice;
     }
 
-    public static int dashboard(String car) {
-        System.out.println("Car: " + car + "\tLocation: 0\tSpeed: 0\tDestination: 2500\tTime Passed: 0");
+    public static int dashboard(String car, int miles, int speed, int destination, int time) {
+        System.out.println("Car: " + car + "\tMiles: "+miles+"\tSpeed: "+speed+"\tDestination: "+destination+"\tTime Passed: "+time);
         System.out.println("1. Accelerate\n2. Coast\n3. Decelerate");
         System.out.print("==>");
         int choice = input.nextInt();
