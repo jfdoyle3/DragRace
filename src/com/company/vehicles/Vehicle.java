@@ -17,6 +17,11 @@ public abstract class Vehicle  {
         return model;
     }
 
+    public abstract void acceleration();
+
+    public abstract void deceleration();
+
+    public abstract void coast();
 
     public abstract void addPassenger(String name, int weight);
 

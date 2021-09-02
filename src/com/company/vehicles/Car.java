@@ -21,6 +21,25 @@ public class Car extends Vehicle {
         this.tankSize=tankSize;
     }
 
+    @Override
+    public void acceleration( int horsePower) {
+        //* speed +=horsepower/4 [(- totalWeight(persons)/2000)]
+        speed += (horsePower / 4);   // - (weight/2000);
+        return speed;
+
+
+    }
+
+    @Override
+    public void deceleration() {
+
+    }
+
+    @Override
+    public void coast() {
+
+    }
+
     public void addPassenger(String name, int weight) {
         carPassengers.add(new Passenger(name, weight));
     }
@@ -86,18 +105,7 @@ public class Car extends Vehicle {
 //    }
 
 
-//    @Override
-//    public void accelerate() {
-//
-//    }
-//
-//    @Override
-//    public void coast() {
-//    }
-//
-//    @Override
-//    public void decelerate() {
- //   }
+
 
     @Override
     public String toString() {

@@ -3,8 +3,8 @@ package com.company.vehicles.engine;
 public class InternalCombustion extends Engine {
 
     private String model;
-    public InternalCombustion(String model, int horsePower, int maxSpeed) {
-        super(horsePower, maxSpeed);
+    public InternalCombustion(String model, int maxHorsePower, int maxSpeed) {
+        super(maxHorsePower, maxSpeed);
         this.model=model;
     }
 
@@ -22,8 +22,8 @@ public class InternalCombustion extends Engine {
         return "InternalCombustion:" +
                 "\nmodel='" + model + '\'' +
                 "\nisRunning=" + isRunning +
-                "\nhorsePower=" + horsePower +
+                "\nmaxHorsePower=" + maxHorsePower +
                 "\nmaxSpeed=" + maxSpeed +
-                "\nmph=" + mph;
+                "\nacceleration Rate="+accelerationRate;
     }
 }

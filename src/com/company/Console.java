@@ -1,6 +1,7 @@
 package com.company;
 
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Console {
@@ -30,10 +31,16 @@ public class Console {
     }
 
     public static int dashboard(String car, int miles, int speed, int destination, int time) {
+        int choice;
         System.out.println("Car: " + car + "\tMiles: "+miles+"\tSpeed: "+speed+"\tDestination: "+destination+"\tTime Passed: "+time);
         System.out.println("1. Accelerate\n2. Coast\n3. Decelerate");
         System.out.print("==>");
-        int choice = input.nextInt();
+       try {
+             choice = input.nextInt();
+        }catch (InputMismatchException err){
+            System.out.println(err);
+            choice=99;
+        }
         return choice;
 
     }
