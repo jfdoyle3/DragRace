@@ -8,7 +8,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-       DragStrip.pitArea();
+   //    DragStrip.pitArea();
+        DragTest.accelerate();
         // Scanner input = new Scanner(System.in);
 //                               hp,name,passenger,weight
 //        Car sportCar = new Car(100,"SportsCar",2, 2300);
