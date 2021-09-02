@@ -4,10 +4,12 @@ public class Electric extends Engine{
 
     private int lengthOfCharge;
 
-    public Electric(int horsePower, int maxSpeed, int lengthOfCharge) {
-        super(horsePower, maxSpeed);
+    public Electric(int maxHorsePower, int maxSpeed, int accelerationRate, int lengthOfCharge) {
+        super(maxHorsePower, maxSpeed, accelerationRate);
         this.lengthOfCharge = lengthOfCharge;
     }
+
+
 
     @Override
     public void flipSwitch() {

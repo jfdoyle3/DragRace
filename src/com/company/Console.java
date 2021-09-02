@@ -30,18 +30,21 @@ public class Console {
         return choice;
     }
 
-    public static int dashboard(String car, int miles, int speed, int destination, int time) {
-        int choice;
-        System.out.println("Car: " + car + "\tMiles: "+miles+"\tSpeed: "+speed+"\tDestination: "+destination+"\tTime Passed: "+time);
-        System.out.println("1. Accelerate\n2. Coast\n3. Decelerate");
+    public static int dashboard(String car, int miles, int speed, int destination, int turn) {
+        int choice=99;
+        raceStatus(car, miles, speed, destination, turn);
+        System.out.println("1. Accelerate\n2. Coast\n3. Decelerate\n99. Quit");
         System.out.print("==>");
        try {
              choice = input.nextInt();
         }catch (InputMismatchException err){
-            System.out.println(err);
-            choice=99;
+            System.out.println("Error: Input must be a number - Exiting");
         }
         return choice;
 
+    }
+
+    public static void raceStatus(String car, int miles, int speed, int destination, int turn) {
+        System.out.println("Car: " + car + "\tTraveled: "+ miles +" miles\tSpeed: "+ speed +" mph\tFinish Line: "+(destination - miles)+" miles\tTurn: "+ turn);
     }
 }

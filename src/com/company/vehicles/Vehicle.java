@@ -17,11 +17,11 @@ public abstract class Vehicle  {
         return model;
     }
 
-    public abstract void acceleration();
+    public abstract int acceleration(int horsePower);
 
-    public abstract void deceleration();
+    public abstract int deceleration(int horsePower);
 
-    public abstract void coast();
+    public abstract int coast();
 
     public abstract void addPassenger(String name, int weight);
 

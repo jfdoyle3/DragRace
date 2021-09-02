@@ -7,11 +7,11 @@ public abstract class Engine {
     protected int maxSpeed;
     protected int accelerationRate;
 
-    public Engine(int maxHorsePower, int maxSpeed) {
+    public Engine(int maxHorsePower, int maxSpeed, int accelerationRate) {
         this.isRunning = false;
         this.maxSpeed = maxSpeed;
         this.maxHorsePower = maxHorsePower;
-        this.accelerationRate=100;
+        this.accelerationRate=accelerationRate;
     }
 
 

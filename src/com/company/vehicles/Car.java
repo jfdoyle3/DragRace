@@ -12,6 +12,7 @@ public class Car extends Vehicle {
     private int totalWeight;
     private Engine engine;
     private int tankSize;
+    private int speed=0;
 
     public Car(String model, int maxPassengers, int weight, Engine engine, int tankSize) {
         super(model, maxPassengers);
@@ -21,23 +22,26 @@ public class Car extends Vehicle {
         this.tankSize=tankSize;
     }
 
+    public Engine getEngine() {
+        return engine;
+    }
+
     @Override
-    public void acceleration( int horsePower) {
+    public int acceleration(int horsePower) {
         //* speed +=horsepower/4 [(- totalWeight(persons)/2000)]
         speed += (horsePower / 4);   // - (weight/2000);
         return speed;
-
-
     }
 
     @Override
-    public void deceleration() {
-
+    public int deceleration(int horsePower) {
+        speed -= (horsePower / 4);
+        return speed;
     }
 
     @Override
-    public void coast() {
-
+    public int coast() {
+        return speed;
     }
 
     public void addPassenger(String name, int weight) {
