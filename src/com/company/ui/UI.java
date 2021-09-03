@@ -1,10 +1,10 @@
-package com.company;
+package com.company.ui;
 
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Console {
+public class UI {
     private static Scanner input = new Scanner(System.in);
 
     // use color Ansi for car color
@@ -38,7 +38,7 @@ public class Console {
        try {
              choice = input.nextInt();
         }catch (InputMismatchException err){
-            System.out.println("Error: Input must be a number - Exiting");
+            System.out.println(ErrorMessage.INPUT_MISMATCH_EXCEPTION);
         }
         return choice;
 

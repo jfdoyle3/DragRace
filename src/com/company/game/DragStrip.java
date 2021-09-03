@@ -1,7 +1,7 @@
-package com.company;
+package com.company.game;
 
+import com.company.ui.UI;
 import com.company.vehicles.Car;
-import com.company.vehicles.engine.Engine;
 import com.company.vehicles.engine.InternalCombustion;
 
 public class DragStrip {
@@ -9,12 +9,12 @@ public class DragStrip {
 
     public static void pitArea() {
 
-        // int selectCar=Console.selectCar();
-        // int selectEngine=Console.selectEngine();
-        InternalCombustion gasPowered = new InternalCombustion("V8", 760, 190, 100);
-        Car car = new Car("GT500", 4, 4171, gasPowered, 16);
-        car.generatePassengers(4);
-        System.out.println(car.toString());
+         int selectCar= UI.selectCar();
+         int selectEngine= UI.selectEngine();
+       // InternalCombustion gasPowered = new InternalCombustion("V8", 760, 190, 100);
+       // Car car = new Car("GT500", 4, 4171, gasPowered, 16);
+       // car.generatePassengers(4);
+      //  System.out.println(car.toString());
 
     }
 
@@ -33,7 +33,7 @@ public class DragStrip {
         speed = 0;
 
         while (true) {
-            int choice = Console.dashboard(car.getModel(), mileageTraveling, speed, totalMileage, turn);
+            int choice = UI.dashboard(car.getModel(), mileageTraveling, speed, totalMileage, turn);
             switch (choice) {
                 case 1:
                     speed=accelerate(car);
@@ -53,7 +53,7 @@ public class DragStrip {
             turn++;
             mileageTraveling += speed;
             if(mileageTraveling>=totalMileage){
-                Console.raceStatus(car.getModel(), mileageTraveling, speed, totalMileage, turn);
+                UI.raceStatus(car.getModel(), mileageTraveling, speed, totalMileage, turn);
                 System.out.println("End Race");
                 break;
             }
