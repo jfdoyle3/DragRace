@@ -1,15 +1,13 @@
 package com.company;
 
 
-
 public class Main {
-
 
 
     public static void main(String[] args) {
 
-   //    DragStrip.pitArea();
-       DragStrip.race();
+        DragStrip.pitArea();
+      //  DragStrip.race();
 
     }
 }
