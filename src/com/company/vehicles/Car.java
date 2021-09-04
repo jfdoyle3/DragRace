@@ -56,8 +56,8 @@ public class Car extends Vehicle {
     // weight avg 137
     // weight 100 - 220
     public void generatePassengers(int numOfPassengers) {
-        int upperBound = 220;
-        int lowerBound = 100;
+        int minWeight = 100;
+        int maxWeight = 220;
 
         if (numOfPassengers>=maxPassengers)
             numOfPassengers=maxPassengers;
@@ -71,8 +71,8 @@ public class Car extends Vehicle {
             else
                 pass.append("Passenger ").append(idx) ;
 
-            int number = lowerBound + (int) (Math.random() * ((upperBound - lowerBound) + 1));
-            carPassengers.add(new Passenger(pass.toString(), number));
+            int weight = minWeight + (int) (Math.random() * ((maxWeight - minWeight) + 1));
+            carPassengers.add(new Passenger(pass.toString(), weight));
         }
       //  System.out.println(carPassengers.size() + " Passengers are in the car");
     }
