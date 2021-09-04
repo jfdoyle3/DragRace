@@ -15,7 +15,7 @@ public class DragStrip {
         int speed, mileageTraveling, turn, totalMileage, horsePower, weight, gasTank, maxSpeed, maxHorsePower;
         horsePower = 0;
         turn = 0;
-        totalMileage = 2500;
+        totalMileage = 50;
         mileageTraveling = 0;
         speed = 0;
 
@@ -39,11 +39,16 @@ public class DragStrip {
             }
             turn++;
             mileageTraveling += speed;
-            if(mileageTraveling>=totalMileage){
+            if(mileageTraveling>=totalMileage) {
                 UI.raceStatus(car.getModel(), mileageTraveling, speed, totalMileage, turn);
-                System.out.println("End Race");
+                System.out.println("You went "+Math.abs(mileageTraveling-totalMileage)+" miles over the finish line.");
                 break;
             }
+            if (totalMileage==0){
+                System.out.println("Perfect finish");
+                break;
+              }
+
         }
 
     }
