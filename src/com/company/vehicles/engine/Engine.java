@@ -21,6 +21,17 @@ public abstract class Engine {
         return accelerationRate;
     }
 
+    public boolean isRunning() {
+        return isRunning;
+    }
+
+    public int getMaxHorsePower() {
+        return maxHorsePower;
+    }
+
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
 
     @Override
     public String toString() {

@@ -6,29 +6,16 @@ import com.company.vehicles.engine.InternalCombustion;
 
 public class DragStrip {
 
-
-    public static void pitArea() {
-
-         int selectCar= UI.selectCar();
-         int selectEngine= UI.selectEngine();
-       // InternalCombustion gasPowered = new InternalCombustion("V8", 760, 190, 100);
-       // Car car = new Car("GT500", 4, 4171, gasPowered, 16);
-       // car.generatePassengers(4);
-      //  System.out.println(car.toString());
-
-    }
-
-
     public static void race() {
         InternalCombustion gasPowered = new InternalCombustion("V8", 70, 190, 100);
         Car car = new Car("GT500", 4, 4171, gasPowered, 16);
         car.generatePassengers(4);
-     //   System.out.println(car.toString());
+      //  System.out.println(car.toString());
 
         int speed, mileageTraveling, turn, totalMileage, horsePower, weight, gasTank, maxSpeed, maxHorsePower;
         horsePower = 0;
         turn = 0;
-        totalMileage = 500;
+        totalMileage = 2500;
         mileageTraveling = 0;
         speed = 0;
 

@@ -29,13 +29,17 @@ public class Car extends Vehicle {
     @Override
     public int acceleration(int horsePower) {
         //* speed +=horsepower/4 [(- totalWeight(persons)/2000)]
-        speed += (horsePower / 4);   // - (weight/2000);
+        speed += (horsePower / 4);// - (weight/2000);
+        if(speed>=engine.getMaxSpeed())
+            speed=engine.getMaxSpeed();
         return speed;
     }
 
     @Override
     public int deceleration(int horsePower) {
         speed -= (horsePower / 4);
+        if(speed<=0)
+            speed=0;
         return speed;
     }
 
@@ -70,7 +74,7 @@ public class Car extends Vehicle {
             int number = lowerBound + (int) (Math.random() * ((upperBound - lowerBound) + 1));
             carPassengers.add(new Passenger(pass.toString(), number));
         }
-        System.out.println(carPassengers.size() + " Passengers are in the car");
+      //  System.out.println(carPassengers.size() + " Passengers are in the car");
     }
 
     public void removePassenger(String name) {
