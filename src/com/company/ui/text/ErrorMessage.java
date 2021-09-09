@@ -1,4 +1,4 @@
-package com.company.ui;
+package com.company.ui.text;
 
 public enum ErrorMessage {
 

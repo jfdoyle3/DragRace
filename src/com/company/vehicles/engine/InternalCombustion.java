@@ -40,10 +40,10 @@ public class InternalCombustion extends Engine implements EngineActions {
     @Override
     public String displayEngine() {
         return "Gas Engine:"+
-               "\nModel:" + model+
-               "\nMax HorsePower:" + maxHorsePower +" hp"+
-               "\nMax Speed:" + maxSpeed +" mph"+
-               "\nAcceleration Rate:"+accelerationRate;
+               "\nModel: " + model+
+               "\nMax HorsePower: " + maxHorsePower +" hp"+
+               "\nMax Speed: " + maxSpeed +" mph"+
+               "\nAcceleration Rate: "+accelerationRate/4+" mph +/-";
     }
 
 }

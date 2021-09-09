@@ -22,6 +22,7 @@ public class Car extends Vehicle {
         this.tankSize=tankSize;
     }
 
+
     public Engine getEngine() {
         return engine;
     }
@@ -115,8 +116,8 @@ public class Car extends Vehicle {
         return "Car: "+
                "\nModel: " + model +
                "\nPassengers: " + carPassengers +
-               "\ntotalWeight=" + getTotalWeight()+" lbs"+
-                "\ntankSize=" + tankSize+" gals"+
+               "\nWeight: " + getTotalWeight()+" lbs (Car & Passengers)"+
+                "\nTank Capacity: " + tankSize+" gals"+
                 "\n--------------|Engine|----------------\n"
                 +engine.displayEngine();
     }

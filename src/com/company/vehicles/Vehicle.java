@@ -13,6 +13,10 @@ public abstract class Vehicle  {
         this.maxPassengers = maxPassengers;
     }
 
+    public int getMaxPassengers() {
+        return maxPassengers;
+    }
+
     public String getModel() {
         return model;
     }

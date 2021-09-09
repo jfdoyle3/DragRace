@@ -1,5 +1,7 @@
 package com.company.ui;
 
+import com.company.ui.text.ErrorMessage;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 

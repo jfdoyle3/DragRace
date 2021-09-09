@@ -7,22 +7,30 @@ import com.company.vehicles.engine.InternalCombustion;
 public class DragStrip {
 
     public static void race() {
-
+        int speed, mileageTraveling, turn, totalMileage;
+        turn = 0;
+        mileageTraveling = 0;
+        speed = 0;
 
         InternalCombustion gasPowered = new InternalCombustion("V8", 70, 190, 100);
         Car car = new Car("GT500", 4, 4171, gasPowered, 16);
-        car.generatePassengers(4);
-        System.out.println(car.displayCar());
-        car.getEngine().displayEngineState();
 
+        System.out.println("The max passengers for the "+car.getModel()+" is "+car.getMaxPassengers());
+        int passengers=UI.setPassengers();
+        if(passengers> car.getMaxPassengers())
+            passengers=car.getMaxPassengers();
+        if(passengers<=0)
+            passengers=1;
+        car.generatePassengers(passengers);
 
-        int speed, mileageTraveling, turn, totalMileage, horsePower, weight, gasTank, maxSpeed, maxHorsePower;
-        horsePower = 0;
-        turn = 0;
-      //  totalMileage = 50;
-        mileageTraveling = 0;
-        speed = 0;
         totalMileage=UI.setTrackMileage();
+
+        System.out.println("Welcome to Race Day\n-----------------------------\nThis Vehicle is racing today:");
+        System.out.println(car.displayCar());
+        System.out.println("-------------------------------------------\nCurrent status of the vehicle's engine:");
+        car.getEngine().displayEngineState();
+        System.out.println("\n\nLet the race begin!\n");
+
 
         while (true) {
             int choice = UI.dashboard(car.getModel(), mileageTraveling, speed, totalMileage, turn);
@@ -30,27 +38,16 @@ public class DragStrip {
                 choice = 88;
             }
             switch (choice) {
-                case 1:
-                    speed = accelerate(car);
-                    break;
-                case 2:
-                    speed = coast(car);
-                    break;
-                case 3:
-                    speed = decelerate(car);
-                    break;
-                case 4:
+                case 1 -> speed = accelerate(car);
+                case 2 -> speed = coast(car);
+                case 3 -> speed = decelerate(car);
+                case 4 -> {
                     car.getEngine().engineTurnOnOff();
                     car.getEngine().displayEngineState();
-                    break;
-                case 88:
-                    car.getEngine().displayEngineState();
-                    break;
-                case 99:
-                    System.exit(0);
-                    break;
-                default:
-                    System.out.println("invalid selection");
+                }
+                case 88 -> car.getEngine().displayEngineState();
+                case 99 -> System.exit(0);
+                default -> System.out.println("invalid selection");
             }
             turn++;
             mileageTraveling += speed;

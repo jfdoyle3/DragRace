@@ -1,6 +1,9 @@
 package com.company.ui;
 
 
+import com.company.ui.text.ErrorMessage;
+import com.company.ui.text.MenuText;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -22,6 +25,12 @@ public class UI {
         return mileage;
     }
 
+    public static int setPassengers(){
+        System.out.println("How many passengers in Vehicle? ");
+        int passengers=Input.getInt();
+        return passengers;
+    }
+
 
     public static int selectEngine(){
         System.out.println("Select Engine:\nGas\t\tElectric\n1. V8\t3. 1000KV\n2. V12\t4. 1300KV");
@@ -34,9 +43,9 @@ public class UI {
         int choice=99;
         raceStatus(car, miles, speed, destination, turn);
         if(speed>0)
-            System.out.println("1. Accelerate\n2. Coast\n3. Decelerate\n99. Quit");
+            System.out.println(MenuText.TURN_OPTIONS);
         else
-            System.out.println("1. Accelerate\n2. Coast\n3. Decelerate\n4. Start/Stop Engine\n99. Quit");
+            System.out.println(MenuText.TURN_OPTIONS_ENGINE);
         System.out.print("==>");
        try {
              choice = input.nextInt();
