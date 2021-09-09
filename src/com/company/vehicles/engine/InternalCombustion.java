@@ -1,6 +1,6 @@
 package com.company.vehicles.engine;
 
-public class InternalCombustion extends Engine {
+public class InternalCombustion extends Engine implements EngineActions {
 
     private String model;
 
@@ -13,9 +13,18 @@ public class InternalCombustion extends Engine {
         return model;
     }
 
+
+
     @Override
-    public void flipSwitch() {
+    public void engineTurnOnOff() {
         isRunning=!isRunning;
+
+    }
+
+    @Override
+    public void displayEngineState() {
+        String displayStatus=(!isRunning) ?  "stopped":"running";
+        System.out.println("Gas Engine is "+displayStatus);
     }
 
     @Override
@@ -27,4 +36,14 @@ public class InternalCombustion extends Engine {
                 "\nmaxSpeed=" + maxSpeed +
                 "\nacceleration Rate="+accelerationRate;
     }
+
+    @Override
+    public String displayEngine() {
+        return "Gas Engine:"+
+               "\nModel:" + model+
+               "\nMax HorsePower:" + maxHorsePower +" hp"+
+               "\nMax Speed:" + maxSpeed +" mph"+
+               "\nAcceleration Rate:"+accelerationRate;
+    }
+
 }

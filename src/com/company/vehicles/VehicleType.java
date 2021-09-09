@@ -1,6 +1,4 @@
 package com.company.vehicles;
 
-public enum CarSelection {
-
-
+public interface VehicleType {
 }

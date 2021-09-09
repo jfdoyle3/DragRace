@@ -7,29 +7,44 @@ import com.company.vehicles.engine.InternalCombustion;
 public class DragStrip {
 
     public static void race() {
+
+
         InternalCombustion gasPowered = new InternalCombustion("V8", 70, 190, 100);
         Car car = new Car("GT500", 4, 4171, gasPowered, 16);
         car.generatePassengers(4);
-      //  System.out.println(car.toString());
+        System.out.println(car.displayCar());
+        car.getEngine().displayEngineState();
+
 
         int speed, mileageTraveling, turn, totalMileage, horsePower, weight, gasTank, maxSpeed, maxHorsePower;
         horsePower = 0;
         turn = 0;
-        totalMileage = 50;
+      //  totalMileage = 50;
         mileageTraveling = 0;
         speed = 0;
+        totalMileage=UI.setTrackMileage();
 
         while (true) {
             int choice = UI.dashboard(car.getModel(), mileageTraveling, speed, totalMileage, turn);
+            if (choice != 4 && !car.getEngine().isRunning()) {
+                choice = 88;
+            }
             switch (choice) {
                 case 1:
-                    speed=accelerate(car);
+                    speed = accelerate(car);
                     break;
                 case 2:
-                    speed=coast(car);
+                    speed = coast(car);
                     break;
                 case 3:
-                    speed=decelerate(car);
+                    speed = decelerate(car);
+                    break;
+                case 4:
+                    car.getEngine().engineTurnOnOff();
+                    car.getEngine().displayEngineState();
+                    break;
+                case 88:
+                    car.getEngine().displayEngineState();
                     break;
                 case 99:
                     System.exit(0);
@@ -39,15 +54,15 @@ public class DragStrip {
             }
             turn++;
             mileageTraveling += speed;
-            if(mileageTraveling>=totalMileage) {
+            if (mileageTraveling >= totalMileage) {
                 UI.raceStatus(car.getModel(), mileageTraveling, speed, totalMileage, turn);
-                System.out.println("You went "+Math.abs(mileageTraveling-totalMileage)+" miles over the finish line.");
+                System.out.println("You went " + Math.abs(mileageTraveling - totalMileage) + " miles over the finish line.");
                 break;
             }
-            if (totalMileage==0){
+            if (totalMileage == 0) {
                 System.out.println("Perfect finish");
                 break;
-              }
+            }
 
         }
 
@@ -57,11 +72,11 @@ public class DragStrip {
         return car.acceleration(car.getEngine().getAccelerationRate());
     }
 
-    private static int coast(Car car){
+    private static int coast(Car car) {
         return car.coast();
     }
 
-    private static int decelerate(Car car){
+    private static int decelerate(Car car) {
         return car.deceleration(car.getEngine().getAccelerationRate());
     }
 

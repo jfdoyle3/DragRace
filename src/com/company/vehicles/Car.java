@@ -100,21 +100,6 @@ public class Car extends Vehicle {
         System.out.println("Beep!");
     }
 
-
-
-//    @Override
-//    public void turnOn() {
-//        engine.flipSwitch();
-//    }
-//
-//    @Override
-//    public void turnOff() {
-//        engine.flipSwitch();
-//    }
-
-
-
-
     @Override
     public String toString() {
         return "Car:" +
@@ -126,6 +111,17 @@ public class Car extends Vehicle {
                 "\ntankSize=" + tankSize+
                 "\nEngine:\n" + engine.toString();
     }
+    public String displayCar() {
+        return "Car: "+
+               "\nModel: " + model +
+               "\nPassengers: " + carPassengers +
+               "\ntotalWeight=" + getTotalWeight()+" lbs"+
+                "\ntankSize=" + tankSize+" gals"+
+                "\n--------------|Engine|----------------\n"
+                +engine.displayEngine();
+    }
+
+
 
 
 }

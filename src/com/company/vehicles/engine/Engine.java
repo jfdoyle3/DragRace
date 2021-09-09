@@ -1,6 +1,6 @@
 package com.company.vehicles.engine;
 
-public abstract class Engine {
+public abstract class Engine implements EngineActions {
 
     protected boolean isRunning;
     protected int maxHorsePower;
@@ -13,9 +13,6 @@ public abstract class Engine {
         this.maxHorsePower = maxHorsePower;
         this.accelerationRate=accelerationRate;
     }
-
-
-    public abstract void flipSwitch();
 
     public int getAccelerationRate() {
         return accelerationRate;

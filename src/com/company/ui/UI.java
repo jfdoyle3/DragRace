@@ -7,11 +7,6 @@ import java.util.Scanner;
 public class UI {
     private static Scanner input = new Scanner(System.in);
 
-    // use color Ansi for car color
-    public void track() {
-        System.out.println("....|....|....|....|....|....|....||");
-        System.out.println("C1");
-    }
 
 
     public static int selectCar() {
@@ -21,6 +16,11 @@ public class UI {
         return choice;
     }
 
+    public static int setTrackMileage(){
+        System.out.println("How many miles is the raceway? ");
+        int mileage=Input.getInt();
+        return mileage;
+    }
 
 
     public static int selectEngine(){
@@ -33,7 +33,10 @@ public class UI {
     public static int dashboard(String car, int miles, int speed, int destination, int turn) {
         int choice=99;
         raceStatus(car, miles, speed, destination, turn);
-        System.out.println("1. Accelerate\n2. Coast\n3. Decelerate\n99. Quit");
+        if(speed>0)
+            System.out.println("1. Accelerate\n2. Coast\n3. Decelerate\n99. Quit");
+        else
+            System.out.println("1. Accelerate\n2. Coast\n3. Decelerate\n4. Start/Stop Engine\n99. Quit");
         System.out.print("==>");
        try {
              choice = input.nextInt();
@@ -47,4 +50,6 @@ public class UI {
     public static void raceStatus(String car, int miles, int speed, int destination, int turn) {
         System.out.println("Car: " + car + "\tTraveled: "+ miles +" miles\tSpeed: "+ speed +" mph\tFinish Line: "+(destination - miles)+" miles\tTurn: "+ turn);
     }
+
+
 }
