@@ -20,7 +20,7 @@ public class UI {
     }
 
     public static int setTrackMileage(){
-        System.out.println("How many miles is the raceway? ");
+        System.out.println("How many miles is the track? ");
         int mileage=Input.getInt();
         return mileage;
     }
@@ -57,6 +57,7 @@ public class UI {
     }
 
     public static void raceStatus(String car, int miles, int speed, int destination, int turn) {
+        System.out.println(">--------------------------------------------------------------------------------<");
         System.out.println("Car: " + car + "\tTraveled: "+ miles +" miles\tSpeed: "+ speed +" mph\tFinish Line: "+(destination - miles)+" miles\tTurn: "+ turn);
     }
 

@@ -29,7 +29,7 @@ public class DragStrip {
         System.out.println(car.displayCar());
         System.out.println("-------------------------------------------\nCurrent status of the vehicle's engine:");
         car.getEngine().displayEngineState();
-        System.out.println("\n\nLet the race begin!\n");
+        System.out.println("\nLet the race begin!");
 
 
         while (true) {
