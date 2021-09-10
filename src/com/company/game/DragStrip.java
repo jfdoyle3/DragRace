@@ -1,6 +1,7 @@
 package com.company.game;
 
 import com.company.ui.UI;
+import com.company.ui.text.ErrorMessage;
 import com.company.vehicles.Car;
 import com.company.vehicles.engine.InternalCombustion;
 
@@ -29,7 +30,7 @@ public class DragStrip {
         System.out.println(car.displayCar());
         System.out.println("-------------------------------------------\nCurrent status of the vehicle's engine:");
         car.getEngine().displayEngineState();
-        System.out.println("\n\nLet the race begin!\n");
+        System.out.println("\nLet the race begin!");
 
 
         while (true) {
@@ -47,7 +48,7 @@ public class DragStrip {
                 }
                 case 88 -> car.getEngine().displayEngineState();
                 case 99 -> System.exit(0);
-                default -> System.out.println("invalid selection");
+                default -> System.out.println(ErrorMessage.INVALID_SELECTION);
             }
             turn++;
             mileageTraveling += speed;
