@@ -112,6 +112,7 @@ public class Car extends Vehicle {
                 "\ntankSize=" + tankSize+
                 "\nEngine:\n" + engine.toString();
     }
+
     public String displayCar() {
         return "Car: "+
                "\nModel: " + model +

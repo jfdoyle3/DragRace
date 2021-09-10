@@ -3,19 +3,15 @@ package com.company.ui.text;
 public enum ErrorMessage {
 
     // example:
-   // VARIABLE_NAME(output),
-   // VARIABLE_NAME(output);
+    // VARIABLE_NAME(output),
+    // VARIABLE_NAME(output);
 
-   INPUT_MISMATCH_EXCEPTION("Error: Input must be a number - Exiting");
+    INPUT_MISMATCH_EXCEPTION("Error: Input must be a number - Exiting"),
+    INVALID_SELECTION("invalid selection");
 
     private final String errorMsg;
 
-    ErrorMessage(String errorMsg) {
-        this.errorMsg = errorMsg;
-    }
+    ErrorMessage(String errorMsg) {this.errorMsg = errorMsg;}
 
-
-    public String toString() {
-        return errorMsg;
-    }
+    public String toString() { return errorMsg; }
 }

@@ -22,6 +22,9 @@ Completed               no matter what option is selected a single Tick of time 
 TODO    application should finish once the user gets the vehicle to travel the given distance and comes to a stop
     (a tick passes where the location of the car does not change) should display the amount of ticks it took.
 
+TODO: Have to Select multiple vehicles with multiple engines
+        HashMap to store vehicles or List.
+
 
             be creative on this I'm giving very little information to see if you can build something from almost no information.
             Ask for help when stuck and take the needed time to plan.

@@ -11,7 +11,6 @@ public enum MenuText {
         this.menuText = menuText;
     }
 
-
     public String toString() {
         return menuText;
     }

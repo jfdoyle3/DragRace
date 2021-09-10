@@ -10,8 +10,8 @@ import java.util.List;
 
 public class PitArea {
 
-    public PitArea() {
-        List<Car> cars=new ArrayList<>();
+    public static void xPitArea() {
+        List<Car> cars = new ArrayList<>();
         InternalCombustion gasPowered = null;
         Car car = null;
 //        int selectCar= UI.selectCar();
