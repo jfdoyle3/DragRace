@@ -7,7 +7,7 @@ public enum ErrorMessage {
     // VARIABLE_NAME(output);
 
     INPUT_MISMATCH_EXCEPTION("Error: Input must be a number - Exiting"),
-    INVALID_SELECTION("invalid selection");
+    INVALID_SELECTION("Error: Invalid Selection");
 
     private final String errorMsg;
 
