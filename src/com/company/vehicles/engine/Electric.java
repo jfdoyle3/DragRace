@@ -3,9 +3,11 @@ package com.company.vehicles.engine;
 public class Electric extends Engine{
 
     private int lengthOfCharge;
+    private String model;
 
-    public Electric(int maxHorsePower, int maxSpeed, int accelerationRate, int lengthOfCharge) {
+    public Electric(String model,int maxHorsePower, int maxSpeed, int accelerationRate, int lengthOfCharge) {
         super(maxHorsePower, maxSpeed, accelerationRate);
+        this.model=model;
         this.lengthOfCharge = lengthOfCharge;
     }
 
@@ -24,6 +26,7 @@ public class Electric extends Engine{
     @Override
     public String toString() {
         return "Electric{" +
+                "\nmodel='" + model + '\'' +
                 "lengthOfCharge=" + lengthOfCharge +
                 ", isRunning=" + isRunning +
                 ", maxHorsePower=" + maxHorsePower +
@@ -34,11 +37,11 @@ public class Electric extends Engine{
 
     @Override
     public String displayEngine() {
-        return "Electric{" +
-                "lengthOfCharge=" + lengthOfCharge +
-                ", maxHorsePower=" + maxHorsePower +
-                ", maxSpeed=" + maxSpeed +
-                ", accelerationRate=" + accelerationRate +
-                '}';
+        return "Electric:" +
+                "\nModel: " + model+
+                "\nlengthOfCharge=" + lengthOfCharge +
+                "\nMax HorsePower=" + maxHorsePower +
+                "\nMax Speed=" + maxSpeed +
+                "\nAcceleration Rate: "+accelerationRate/4+" mph +/-";
     }
 }

@@ -3,26 +3,25 @@ package com.company.game;
 import com.company.ui.UI;
 import com.company.ui.text.ErrorMessage;
 import com.company.vehicles.Car;
-import com.company.vehicles.engine.InternalCombustion;
 
 public class DragStrip {
 
-    public static void race() {
+    public static void race(Car car) {
         int speed, mileageTraveling, turn, totalMileage;
         turn = 0;
         mileageTraveling = 0;
         speed = 0;
 
-        InternalCombustion gasPowered = new InternalCombustion("V8", 70, 190, 100);
-        Car car = new Car("GT500", 4, 4171, gasPowered, 16);
+//        InternalCombustion gasPowered = new InternalCombustion("V8", 70, 190, 100,16);
+//        Car car = new Car("GT500", 4, 4171, gasPowered);
 
-        System.out.println("The max passengers for the "+car.getModel()+" is "+car.getMaxPassengers());
-        int passengers=UI.setPassengers();
-        if(passengers> car.getMaxPassengers())
-            passengers=car.getMaxPassengers();
-        if(passengers<=0)
-            passengers=1;
-        car.generatePassengers(passengers);
+//        System.out.println("The max passengers for the "+car.getModel()+" is "+car.getMaxPassengers());
+//        int passengers=UI.setPassengers();
+//        if(passengers> car.getMaxPassengers())
+//            passengers=car.getMaxPassengers();
+//        if(passengers<=0)
+//            passengers=1;
+//        car.generatePassengers(passengers);
 
         totalMileage=UI.setTrackMileage();
 
