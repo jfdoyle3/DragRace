@@ -20,28 +20,17 @@ public class PitArea {
         int selectCar = UI.selectCar();
         int selectEngine = UI.selectEngine();
         System.out.println("--------------------------------------> "+selectCar+" |--------> "+selectEngine);
-        // Gas Engines
+
         InternalCombustion    gasPoweredV8 = new InternalCombustion("V8", 760, 190, 100);
-        InternalCombustion    gasPoweredV12 = new InternalCombustion("V12", 760, 190, 100);
-
-        //Electric
-       // TODO: Add another Engine
         Electric electricPowered=new Electric(100,150,100,8);
-        Electric electricPowered2=new Electric(100,100,100,8);
 
-
-        //Add Gas to list
         engines.add(gasPoweredV8);
-        engines.add(gasPoweredV12);
-
-        // Add Electric to list
         engines.add(electricPowered);
-        engines.add(electricPowered2);
 
-        // Car
-        // TODO: Add another Car
-        Car car = new Car("GT500", 4, 4171, engines.get(selectEngine-1), 16);
-        Car car2=new Car("car2",3,333,engines.get(selectEngine-1),12);
+
+
+        Car car = new Car("Sports", 4, 4171, engines.get(selectEngine-1), 16);
+        Car car2=new Car("Roadster",3,333,engines.get(selectEngine-1),12);
 
         // Generate passengers (Optional)
         car.generatePassengers(4);
