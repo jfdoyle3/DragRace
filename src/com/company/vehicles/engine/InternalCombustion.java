@@ -3,10 +3,12 @@ package com.company.vehicles.engine;
 public class InternalCombustion extends Engine implements EngineActions {
 
     private String model;
+    private int tankSize;
 
-    public InternalCombustion(String model, int maxHorsePower, int maxSpeed, int accelerationRate) {
+    public InternalCombustion(String model, int maxHorsePower, int maxSpeed, int accelerationRate,int tankSize) {
         super(maxHorsePower, maxSpeed, accelerationRate);
         this.model = model;
+        this.tankSize=tankSize;
     }
 
     public String getModel() {
@@ -34,6 +36,7 @@ public class InternalCombustion extends Engine implements EngineActions {
                 "\nisRunning=" + isRunning +
                 "\nmaxHorsePower=" + maxHorsePower +
                 "\nmaxSpeed=" + maxSpeed +
+                "\ntankSize=" + tankSize+
                 "\nacceleration Rate="+accelerationRate;
     }
 
@@ -43,6 +46,7 @@ public class InternalCombustion extends Engine implements EngineActions {
                "\nModel: " + model+
                "\nMax HorsePower: " + maxHorsePower +" hp"+
                "\nMax Speed: " + maxSpeed +" mph"+
+                "\nTank Capacity: " + tankSize+" gals"+
                "\nAcceleration Rate: "+accelerationRate/4+" mph +/-";
     }
 

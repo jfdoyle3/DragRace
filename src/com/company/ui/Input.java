@@ -7,15 +7,17 @@ import java.util.Scanner;
 
 public class Input {
 
-    private static Scanner input=new Scanner(System.in);
-
     public static int getInt(){
+        Scanner input=new Scanner(System.in);
         int choice=0;
-        try {
-          choice=  input.nextInt();
-        }catch (InputMismatchException err){
-            System.out.println(ErrorMessage.INPUT_MISMATCH_EXCEPTION);
-        }
+            try {
+                System.out.print("==>");
+                choice = input.nextInt();
+            } catch (InputMismatchException err) {
+                System.out.println(ErrorMessage.INPUT_MISMATCH_EXCEPTION);
+                getInt();
+            }
+
         return choice;
     }
 }

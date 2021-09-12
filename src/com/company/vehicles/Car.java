@@ -11,15 +11,14 @@ public class Car extends Vehicle {
     private int weight;
     private int totalWeight;
     private Engine engine;
-    private int tankSize;
+
     private int speed=0;
 
-    public Car(String model, int maxPassengers, int weight, Engine engine, int tankSize) {
+    public Car(String model, int maxPassengers, int weight, Engine engine) {
         super(model, maxPassengers);
         this.carPassengers = new ArrayList<>();
         this.weight = weight;
         this.engine = engine;
-        this.tankSize=tankSize;
     }
 
 
@@ -109,16 +108,16 @@ public class Car extends Vehicle {
                 "\ncarPassengers=" + carPassengers +
                 "\nweight=" + weight +
                 "\ntotalWeight=" + getTotalWeight()+
-                "\ntankSize=" + tankSize+
+
                 "\nEngine:\n" + engine.toString();
     }
 
     public String displayCar() {
-        return "Car: "+
+        return "--------------|Car|----------------"+
                "\nModel: " + model +
                "\nPassengers: " + carPassengers +
                "\nWeight: " + getTotalWeight()+" lbs (Car & Passengers)"+
-                "\nTank Capacity: " + tankSize+" gals"+
+
                 "\n--------------|Engine|----------------\n"
                 +engine.displayEngine();
     }

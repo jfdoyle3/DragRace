@@ -14,8 +14,7 @@ public class UI {
 
     public static int selectCar() {
         System.out.println("Select Car:\n1. Roadster\n2. Sport");
-        System.out.print("==>");
-        int choice = input.nextInt();
+        int choice = Input.getInt();
         return choice;
     }
 
@@ -33,9 +32,8 @@ public class UI {
 
 
     public static int selectEngine(){
-        System.out.println("Select Engine:\nGas\t\tElectric\n1. V8\t3. 1000KV\n2. V12\t4. 1300KV");
-        System.out.print("==>");
-        int choice = input.nextInt();
+        System.out.println("Select Engine:\nGas\t\tElectric\n1. V8\t2. 100kWh");
+        int choice = Input.getInt();
         return choice;
     }
 
